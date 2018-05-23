@@ -10,6 +10,7 @@ public class DeadLockTest {
 		ThreadB b = new ThreadB(A, B);
 		a.start();
 		b.start();
+		new ThreadA(A, A).start();
 		
 	}
 }
@@ -25,12 +26,12 @@ class ThreadA extends Thread
 	public void run() {
 		
 		synchronized (A) {
-			System.out.println("ThreadA获取了锁A!");
+			System.out.println("ThreadA閿佷綇!");
 			try {
 				Thread.sleep(2000);
 				synchronized (B) {
-					System.out.println("ThreadA获取了锁B!");
-					System.out.println("ThreadA is end !");
+					System.out.println("ThreadA閿佷綇B!");
+					System.out.println("ThreadB is end !");
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -53,10 +54,10 @@ class ThreadB extends Thread
 	{
 		synchronized(B) {
 			try {
-				System.out.println("ThreadB获取了锁B!");
+				System.out.println("ThreadB閿佷綇!");
 				Thread.sleep(2000);
 				synchronized(A) {
-					System.out.println("ThreadB获取了锁A!");
+					System.out.println("ThreadB閿佷綇A!");
 					System.out.println("ThreadB is end!");
 				}
 			} catch (InterruptedException e) {

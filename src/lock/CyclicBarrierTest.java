@@ -8,9 +8,9 @@ public class CyclicBarrierTest {
 	
 	public static void main(String[] args) {
 		CyclicBarrier cyclic = new CyclicBarrier(3);
-		Thread t1 = new Thread(new Worker("ÕÅÈı", cyclic));
-		Thread t2 = new Thread(new Worker("ÀîËÄ", cyclic));
-		Thread t3 = new Thread(new Worker("ÍõÎå", cyclic));
+		Thread t1 = new Thread(new Worker("å¼ ä¸‰", cyclic));
+		Thread t2 = new Thread(new Worker("æå››", cyclic));
+		Thread t3 = new Thread(new Worker("ç‹äº”", cyclic));
 		
 		t1.start();
 		t2.start();
@@ -26,15 +26,15 @@ public class CyclicBarrierTest {
 			this.cyclic = cyclic;
 		}
 		public void run() {
-			System.out.println(name + "¿ªÊ¼¹¤×÷ÁË   ¡£¡£¡£");
+			System.out.println(name + "å¼€å§‹ä»»åŠ¡ï¼ï¼");
 			try {
 				Random random = new Random();
 				int time = random.nextInt(10);
 				System.out.println(name +"---" +time);
 				TimeUnit.SECONDS.sleep(time);
-				System.out.println(name + "×öÍêÁË¡£¡£¡£");
+				System.out.println(name + "å·¥ä½œå®Œæˆï¼");
 				cyclic.await();
-				System.out.println(name + "¿ªÊ¼ÏÂÒ»·İ¹¤×÷£¡£¡£¡");
+				System.out.println(name + "å¼€å§‹ä¸‹ä¸€ä¸ªä»»åŠ¡ï¼");
 			} catch (Exception e) {
 				
 			}

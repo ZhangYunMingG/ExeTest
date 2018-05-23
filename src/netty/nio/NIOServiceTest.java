@@ -9,6 +9,7 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 
+//	传统的NIO服务端
 public class NIOServiceTest {
 	
 	public void init() throws IOException {
@@ -43,7 +44,6 @@ public class NIOServiceTest {
 					SocketChannel socketChannel = (SocketChannel)key.channel();
 					ByteBuffer buffer = ByteBuffer.allocate(1024);
 					StringBuilder stringBilder = new StringBuilder();
-					System.out.println("before -- try -- 48");
 					
 					try {
 						int readBytes = socketChannel.read(buffer);

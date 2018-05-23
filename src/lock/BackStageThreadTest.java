@@ -17,6 +17,7 @@ public class BackStageThreadTest {
 	
 	static class BackStage implements Runnable
 	{
+		@Override
 		public void run() {
 			System.out.println("backStage is start!");
 			try {

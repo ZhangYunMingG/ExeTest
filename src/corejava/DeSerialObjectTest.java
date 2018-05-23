@@ -49,7 +49,7 @@ public class DeSerialObjectTest {
 	{
 		private static final long serialVersionUID = 1l;
 		private String name;
-		private String sex;
+		private transient String sex;
 		private String age;
 		public String getName() {
 			return name;

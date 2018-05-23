@@ -15,10 +15,10 @@ public class MethodFilterTest {
 		
 		Enhancer enhancer = new Enhancer();
 		enhancer.setSuperclass(BookServiceImpl.class);
-		enhancer.setCallbackFilter(new BookFilter());
-		
-		Handler hand = new Handler("boss");
+		Handler hand = new Handler("woker");
 		enhancer.setCallback(hand);
+		
+		enhancer.setCallbackFilter(new BookFilter());
 		enhancer.setCallbacks(new Callback[]{hand,NoOp.INSTANCE});     
 		
 		BookService service = (BookService)enhancer.create();
