@@ -57,14 +57,18 @@ public class SocketServerTest {
 				String str;
 				while(!"exit".equals(str = br.readLine())) {
 					System.out.println(str);
+					if("123".equals(str)) {
+						Thread.sleep(10000);
+					}
 				}
 				bw.write("i am receive !!! ");
 				bw.write("hello");
+				Thread.sleep(100000);
 				bw.newLine();
 				bw.flush();
 				
 				
-			} catch (IOException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			

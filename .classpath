@@ -4,9 +4,12 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="src/design/agent/cglib-2.2.2.jar"/>
 	<classpathentry kind="lib" path="src/design/agent/asm-3.3.1.jar"/>
-	<classpathentry kind="lib" path="src/kafka/lib/kafka_2.11-1.0.0.jar"/>
 	<classpathentry kind="lib" path="src/kafka/lib/kafka-clients-1.0.0.jar"/>
 	<classpathentry kind="lib" path="src/netty/lib/netty-all-5.0.0.Alpha1.jar"/>
 	<classpathentry kind="lib" path="src/netty/lib/msgpack-0.6.7.jar"/>
+	<classpathentry kind="lib" path="src/compress/commons-compress-1.9.jar"/>
+	<classpathentry kind="lib" path="src/kafka/lib/kafka_2.11-1.0.0.jar"/>
+	<classpathentry kind="lib" path="src/kafka/lib/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="src/kafka/lib/slf4j-simple-1.5.8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

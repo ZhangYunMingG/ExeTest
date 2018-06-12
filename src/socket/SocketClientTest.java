@@ -41,6 +41,8 @@ public class SocketClientTest {
 					br = new BufferedReader(isr);
 					String str;
 					
+					bw.write("123");
+					bw.newLine();
 					bw.write("hello i am client!!! ");
 					bw.newLine();
 					bw.write("exit");
