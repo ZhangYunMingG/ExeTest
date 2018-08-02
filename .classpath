@@ -12,6 +12,7 @@
 	<classpathentry kind="lib" path="src/netty/lib/netty-all-5.0.0.Alpha1.jar"/>
 	<classpathentry kind="lib" path="src/kafka/lib/kafka_2.12-0.11.0.2.jar"/>
 	<classpathentry kind="lib" path="src/kafka/lib/kafka-clients-0.11.0.2.jar"/>
+	<classpathentry kind="lib" path="src/Redis/jedis-2.1.0.jar"/>
 	<classpathentry kind="src" path=".apt_generated">
 		<attributes>
 			<attribute name="optional" value="true"/>
