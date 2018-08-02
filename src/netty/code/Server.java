@@ -10,6 +10,8 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 
 public class Server {
 	
@@ -37,6 +39,7 @@ public class Server {
 
 		@Override
 		protected void initChannel(SocketChannel channel) throws Exception {
+			channel.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
 			channel.pipeline().addLast(new LineBasedFrameDecoder(1024));
 			channel.pipeline().addLast(new StringDecoder());
 			channel.pipeline().addLast(new ServerHandler());
