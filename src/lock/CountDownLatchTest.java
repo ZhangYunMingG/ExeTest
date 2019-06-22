@@ -8,9 +8,9 @@ public class CountDownLatchTest {
 
 	public static void main(String[] args) {
 		CountDownLatch count = new CountDownLatch(3);
-		Thread t1 = new Thread(new Worker("ÕÅÈý", count));
-		Thread t2 = new Thread(new Worker("ÀîËÄ", count));
-		Thread t3 = new Thread(new Worker("ÍõÎå", count));
+		Thread t1 = new Thread(new Worker("work1", count));
+		Thread t2 = new Thread(new Worker("work2", count));
+		Thread t3 = new Thread(new Worker("work3", count));
 		Thread t = new Thread(new Boss("boss", count));
 		
 		t1.start();
@@ -29,13 +29,13 @@ public class CountDownLatchTest {
 			this.count = count;
 		}
 		public void run() {
-			System.out.println(name + "¿ªÊ¼¹¤×÷¡£¡£¡£");
+			System.out.println(name + "ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			Random random = new Random();
 			int time = random.nextInt(10);
 			try {
 				System.out.println(name + "----" +time);
 				TimeUnit.SECONDS.sleep(time);
-				System.out.println(name + "Íê³É¹¤×÷¡£¡£¡£");
+				System.out.println(name + "ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 				count.countDown();
 			} catch (Exception e) {
 				
@@ -58,7 +58,7 @@ public class CountDownLatchTest {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println(name + "¼ì²é¹¤×÷£¡£¡£¡");
+			System.out.println(name + "ï¿½ï¿½é¹¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		}
 	}
 }
